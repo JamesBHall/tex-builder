@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/darkmode.css"> 
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="apps/elements/elements.css">
+    <title>TexBuilder</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="application">
+	<div class="toolbar">
+	  <div class="toolbar-item" id="render-button"><img class="toolbar-icon" src="assets/icons/preview_icon.png"/><span class="toolbar-title">Preview</span></div>
+	  <div class="toolbar-item" id="save-button"><img class="toolbar-icon" src="assets/icons/save_icon.png"/><span class="toolbar-title">Save</span></div>
+	  <div class="toolbar-item" id="load-button"><img class="toolbar-icon" src="assets/icons/load_icon.png"/><span class="toolbar-title">Load</span></div>
+	  <div class="toolbar-item" id="export-svg-button"><img class="toolbar-icon" src="assets/icons/export_svg_icon.png"/><span class="toolbar-title">Export SVG</span></div>
+	  <div class="toolbar-item" id="export-png-button"><img class="toolbar-icon" src="assets/icons/export_png_icon.png"/><span class="toolbar-title">Export PNG</span></div>
+	  <div class="toolbar-item" id="toggle-preview-button"><img class="toolbar-icon" src="assets/icons/toggle_preview_icon.png"/><span class="toolbar-title">Toggle Preview</span></div>
+	</div>
+	<div class="main">
+	</div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      require('./renderer-process/styling')
+    </script>
+    <script>
+      require('./assets/import')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+:root {
+    --base-color: #111;
+    --color: #fff;
+    --menu-color: #222;
+    --toolbar-color: #444;
+}
+
+[data-theme="light"] {
+    --base-color: #eee;
+    --color: #000;
+    --menu-color: #ccc;
+    --toolbar-color: #aaa;
+}
+    

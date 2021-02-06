@@ -1,0 +1,84 @@
+.elements-app {
+    display: flex;
+    flex-flow: row;
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.element-render::-webkit-scrollbar-track {
+    background-color: var(--base-color);
+}
+
+.element-render::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: var(--base-color);
+}
+
+.element-render::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--color);
+}
+
+.element-render::-webkit-scrollbar-corner {
+    background-color: var(--base-color);
+}
+
+.element-text-input::-webkit-scrollbar-track {
+    background-color: var(--base-color);
+}
+
+.element-text-input::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: var(--base-color);
+}
+
+.element-text-input::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--color);
+}
+
+.element-text-input::-webkit-scrollbar-corner {
+    background-color: var(--base-color);
+}
+
+#text-input {
+    padding: 15px 15px 15px 15px;
+    flex: 0 0 calc(50% - 30px);
+    height: calc(100% - 30px);
+    color: var(--color);
+    background-color: var(--base-color);
+    border: none;
+    resize: none;
+    overflow-y: auto;
+}
+
+#render {
+    padding: 15px 15px 15px 15px;
+    flex: 0 0 calc(50% - 31px);
+    color: var(--color);
+    background-color: var(--base-color);
+    overflow-y: auto;
+    height: calc(100% - 30px);
+}
+
+#divider {
+    width: 1px;
+    background-color: var(--base-color);
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+#divider-top {
+    height: 15px;
+    background-color: var(--base-color);
+    width: 100%
+}
+
+#divider-center {
+    height: calc(100% - 30px);
+    background-color: #333;
+    width: 100%
+}
