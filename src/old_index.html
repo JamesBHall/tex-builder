@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/darkmode.css"> 
+    <link rel="stylesheet" href="assets/css/global.css">
+    <title>Template</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="menu">
+	<div class="logo"></div>
+	<div class="menu-item"><img class="menu-icon" src="assets/placeholder.png"/><span>Nav 1</span></div>
+	<div class="menu-item"><img class="menu-icon" src="assets/placeholder.png"/><span>Nav 2</span></div>
+      </div>
+      <div class="application">
+	<div class="toolbar">
+	  <div class="toolbar-item"><img class="toolbar-icon" src="assets/placeholder.png"/><span class="toolbar-title">Tool 1</span></div>
+	  <div class="toolbar-item"><img class="toolbar-icon" src="assets/placeholder.png"/><span class="toolbar-title">Tool 2</span></div>
+	  <div class="toolbar-item"><img id="color-mode-icon" class="toolbar-icon" src="assets/dark_mode_icon.png"/><span class="toolbar-title">Dark</span></div>
+	</div>
+	<div class="main">
+	  <h1>Demo app.</h1>
+	  <p> We are using <script>document.write(process.versions.node)</script>,
+	    Chrome <script>document.write(process.versions.chrome)</script>
+	    and Electron <script>document.write(process.versions.electron)</script>
+	  </p>
+	</div>
+      </div>
+    </div>
+    <script>
+      cb = document.querySelector('#checkbox');
+      ic = document.querySelector('#color-mode-icon')
+      function switchTheme(e) {
+	  ic = document.querySelector('#color-mode-icon')
+	  theme = document.documentElement.getAttribute('data-theme');
+
+	  if (theme == 'light') {
+	      ic.src = "assets/dark_mode_icon.png";
+	      document.documentElement.setAttribute('data-theme', 'dark');
+	  } else {
+	      ic.src = "assets/light_mode_icon.png";
+	      document.documentElement.setAttribute('data-theme', 'light');
+	  }
+      }
+      ic.addEventListener('click', switchTheme, false);
+    </script>
+    <script>
+      require('electron').ipcRenderer.on('set_dark', function(event) {
+	  document.documentElement.setAttribute('data-theme', 'dark');
+      })
+    </script>
+    <script>
+      require('electron').ipcRenderer.on('set_light', function(event) {
+	  document.documentElement.setAttribute('data-theme', 'light');
+      })
+    </script>
+  </body>
+</html>
